@@ -81,6 +81,7 @@ source /opt/ros/humble/setup.sh
 ```shell
 source ../../devel/setup.sh
 roslaunch livox_ros_driver2 [launch file]
+roslaunch livox_ros_driver2 msg_MID360.launch
 ```
 
 in which,  
@@ -116,23 +117,23 @@ ros2 launch livox_ros_driver2 rviz_HAP_launch.py
 
 Launch files of ROS are in the "ws_livox/src/livox_ros_driver2/launch_ROS1" directory and launch files of ROS2 are in the "ws_livox/src/livox_ros_driver2/launch_ROS2" directory. Different launch files have different configuration parameter values and are used in different scenarios:
 
-| launch file name          | Description                                                  |
-| ------------------------- | ------------------------------------------------------------ |
-| rviz_HAP.launch   | Connect to HAP LiDAR device<br>Publish pointcloud2 format  data<br>Autoload rviz |
-| msg_HAP.launch     | Connect to HAP LiDAR device<br>Publish livox customized pointcloud data|
-| rviz_MID360.launch        | Connect to MID360 LiDAR device<br>Publish pointcloud2 format data <br>Autoload rviz|
-| msg_MID360.launch          | Connect to MID360 LiDAR device<br>Publish livox customized pointcloud data |
-| rviz_mixed.launch    | Connect to HAP and MID360 LiDAR device<br>Publish pointcloud2 format data <br>Autoload rviz|
-| msg_mixed.launch      | Connect to HAP and MID360 LiDAR device<br>Publish livox customized pointcloud data |
+| launch file name   | Description                                                                                 |
+|--------------------|---------------------------------------------------------------------------------------------|
+| rviz_HAP.launch    | Connect to HAP LiDAR device<br>Publish pointcloud2 format  data<br>Autoload rviz            |
+| msg_HAP.launch     | Connect to HAP LiDAR device<br>Publish livox customized pointcloud data                     |
+| rviz_MID360.launch | Connect to MID360 LiDAR device<br>Publish pointcloud2 format data <br>Autoload rviz         |
+| msg_MID360.launch  | Connect to MID360 LiDAR device<br>Publish livox customized pointcloud data                  |
+| rviz_mixed.launch  | Connect to HAP and MID360 LiDAR device<br>Publish pointcloud2 format data <br>Autoload rviz |
+| msg_mixed.launch   | Connect to HAP and MID360 LiDAR device<br>Publish livox customized pointcloud data          |
 
 ### 3.2 Livox ros driver 2 internal main parameter configuration instructions
 
 All internal parameters of Livox_ros_driver2 are in the launch file. Below are detailed descriptions of the three commonly used parameters :
 
-| Parameter    | Detailed description                                         | Default |
-| ------------ | ------------------------------------------------------------ | ------- |
-| publish_freq | Set the frequency of point cloud publish <br>Floating-point data type, recommended values 5.0, 10.0, 20.0, 50.0, etc. The maximum publish frequency is 100.0 Hz.| 10.0    |
-| multi_topic  | If the LiDAR device has an independent topic to publish pointcloud data<br>0 -- All LiDAR devices use the same topic to publish pointcloud data<br>1 -- Each LiDAR device has its own topic to publish point cloud data | 0       |
+| Parameter    | Detailed description                                                                                                                                                                                                           | Default |
+|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| publish_freq | Set the frequency of point cloud publish <br>Floating-point data type, recommended values 5.0, 10.0, 20.0, 50.0, etc. The maximum publish frequency is 100.0 Hz.                                                               | 10.0    |
+| multi_topic  | If the LiDAR device has an independent topic to publish pointcloud data<br>0 -- All LiDAR devices use the same topic to publish pointcloud data<br>1 -- Each LiDAR device has its own topic to publish point cloud data        | 0       |
 | xfer_format  | Set pointcloud format<br>0 -- Livox pointcloud2(PointXYZRTLT) pointcloud format<br>1 -- Livox customized pointcloud format<br>2 -- Standard pointcloud2 (pcl :: PointXYZI) pointcloud format in the PCL library (just for ROS) | 0       |
 
   **Note :**

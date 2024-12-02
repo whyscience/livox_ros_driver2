@@ -103,7 +103,7 @@ Lddc::~Lddc() {
     }
   }
 #endif
-  std::cout << "lddc destory!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << std::endl;
+  std::cout << "lddc destory!!!" << std::endl;
 }
 
 int Lddc::RegisterLds(Lds *lds) {
