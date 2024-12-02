@@ -4,7 +4,7 @@ if(ROS_EDITION STREQUAL "ROS1")
 
   # Copyright(c) 2019 livoxtech limited.
 
-  cmake_minimum_required(VERSION 3.0)
+  cmake_minimum_required(VERSION 3.4)
 
 
   #---------------------------------------------------------------------------------------
